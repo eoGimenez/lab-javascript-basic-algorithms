@@ -90,18 +90,21 @@ console.log(counterEt);
 
 //.replace lo termino en estos dias
 //.split("").reverse().join(""); para array
-let phraseToCheck = "step on no pets";
+let phraseToCheck = "taco cat";
 let testPhrase = phraseToCheck.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
 testPhrase = testPhrase.replace(/ /g, "");
+let counterPalin = 0;
 //console.log(testPhrase)
-//let testPhraseLength = testPhrase.length
+let testPhraseLength = (testPhrase.length -1);
+//console.log(testPhraseLength)
 for (i = 0; i < testPhrase.length; i++) {
-    if (testPhrase[i] !== testPhrase[-i]) {
+    if (testPhrase[i] !== testPhrase[testPhraseLength-i]) {
         console.log("No es palindromo");
-        break;
-    } else if {
-        console.log("Es Palindromo");
+    } else if (testPhrase[i] == testPhrase[-i]) {
+        counterPalin ++
+        console.log(counterPalin);
     }
 }
-
-
+if (counterPalin == (Math.floor(testPhrase.length / 2))) {
+    console.log("Es un palindromo");
+}
