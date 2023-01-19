@@ -73,22 +73,23 @@ console.log(counterEt);
 
 //.replace lo termino en estos dias
 //.split("").reverse().join(""); para array
-let phraseToCheck = "taco ocat";
+let phraseToCheck = "taco cat";
 let testPhrase = phraseToCheck.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
 testPhrase = testPhrase.replace(/ /g, "");
 let counterPalin = 0;
-let floorPalin = (testPhrase.length / 2)
-//console.log(testPhrase)
-let testPhraseLength = (testPhrase.length -1);
+let floorPalin = + (testPhrase.length / 2)
+//console.log(floorPalin)
+//let testPhraseLength = (testPhrase.length);
 //console.log(testPhraseLength)
-for (i = 0; i < testPhrase.length; i++) {
-    if (testPhrase[i] == testPhrase[-i]) {
+for (i = 0; i <= floorPalin; i++) {
+    if (testPhrase[i] == testPhrase[(testPhrase.length-i)-1]) {
         counterPalin ++
         //console.log(counterPalin);
         if (counterPalin == (Math.floor(floorPalin))) {
             console.log("Es un palindromo");
+            break;
         }
-    }else if (testPhrase[i] != testPhrase[testPhraseLength-i]) {
+    } else if (testPhrase[i] != testPhrase[(testPhrase.length -i)-1]) {
         console.log("No es palindromo");
     }
 }
