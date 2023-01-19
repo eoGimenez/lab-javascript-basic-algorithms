@@ -1,7 +1,7 @@
 // Iteration 1: Names and Input
 let hacker1 = "Esteban";
 console.log(`The driver's name is ${hacker1}`);
-let hacker2 = "Julia";
+let hacker2 = "julia";
 console.log(`The navigartor's name is ${hacker2}`);
 // Iteration 2: Conditionals
 if (hacker1.length > hacker2.length) {
@@ -25,35 +25,18 @@ console.log(newNameHacker1.toUpperCase());
 }
 console.log(newNameHacker2);
 
+hacker2 = "Julia"
 //
 
-/* if (hacker1.length >= hacker2.length) { */
-    for (let i = 0; i < hacker1.length; i++) {
-        if (hacker1[i] < hacker2[i]) {
-            console.log(`The driver's name goes first.`)
-            break;
-        } else if ( hacker1[i] > hacker2[i]) {
-            console.log(`The navigator's name goes first`)
-            break;
-        } else if ( hacker1 == hacker2 ) {
-            console.log(`What?! You both have the same name?`)
-            break;
-        }
-    }
-/* } else if (hacker1.length < hacker2.length) {
-    for (let i = 0; i < hacker2.length; i++) {
-        if (hacker1[i] < hacker2[i]) {
-            console.log(`The driver's name goes first.`)
-            break;
-        } else if ( hacker1[i] > hacker2[i]) {
-            console.log(`The navigator's name goes first`)
-            break;
-        } else if ( hacker1 == hacker2 ) {
-            console.log(`What?! You both have the same name?`)
-            break;
-        }
-    }
-} */
+if (hacker1.localeCompare(hacker2) < hacker2.localeCompare(hacker1)) {
+    console.log(`The driver's name goes first.`)
+} else if ( hacker1.localeCompare(hacker2) > hacker2.localeCompare(hacker1)) {
+    console.log(`The navigator's name goes first`)
+} else if ( hacker1.localeCompare(hacker2) == hacker2.localeCompare(hacker1) ) {
+    console.log(`What?! You both have the same name?`)
+}
+
+ 
 
 
 ///
@@ -90,21 +73,22 @@ console.log(counterEt);
 
 //.replace lo termino en estos dias
 //.split("").reverse().join(""); para array
-let phraseToCheck = "taco cat";
+let phraseToCheck = "taco ocat";
 let testPhrase = phraseToCheck.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
 testPhrase = testPhrase.replace(/ /g, "");
 let counterPalin = 0;
+let floorPalin = (testPhrase.length / 2)
 //console.log(testPhrase)
 let testPhraseLength = (testPhrase.length -1);
 //console.log(testPhraseLength)
 for (i = 0; i < testPhrase.length; i++) {
-    if (testPhrase[i] !== testPhrase[testPhraseLength-i]) {
-        console.log("No es palindromo");
-    } else if (testPhrase[i] == testPhrase[-i]) {
+    if (testPhrase[i] == testPhrase[-i]) {
         counterPalin ++
-        console.log(counterPalin);
+        //console.log(counterPalin);
+        if (counterPalin == (Math.floor(floorPalin))) {
+            console.log("Es un palindromo");
+        }
+    }else if (testPhrase[i] != testPhrase[testPhraseLength-i]) {
+        console.log("No es palindromo");
     }
-}
-if (counterPalin == (Math.floor(testPhrase.length / 2))) {
-    console.log("Es un palindromo");
 }
